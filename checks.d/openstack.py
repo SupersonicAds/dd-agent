@@ -283,7 +283,7 @@ class KeystoneCatalog(object):
         nova_match = 'novav21' if nova_version == 'v2.1' else 'nova'
 
         for entry in catalog:
-            if entry['name'] == nova_match:
+            if entry['name'] == nova_match or 'Compute' in entry['name']:
                 # Collect any endpoints on the public or internal interface
                 valid_endpoints = {}
                 for ep in entry['endpoints']:
